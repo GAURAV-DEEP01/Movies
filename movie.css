@@ -1,0 +1,15 @@
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap');
+  .headername{
+    color: aliceblue;
+  }
+  .moviehone{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    color: white;
+  }
+  button:focus{
+    outline: none;
+  }
+  img{
+    object-fit: contain;
+  }
