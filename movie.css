@@ -2,10 +2,14 @@
   .headername{
     color: aliceblue;
   }
-  .moviehone{
+  .movie_web{
     font-family: 'Nunito', sans-serif;
     font-weight: 900;
-    color: white;
+  }
+  .header_icon{
+    width: 38px;
+    padding-right: 10px;
+    align-items: center;
   }
   button:focus{
     outline: none;
@@ -13,3 +17,13 @@
   img{
     object-fit: contain;
   }
+.search_container{
+  display: none;
+}
+.search_text{
+  word-wrap: break-word;
+}
+.container{
+  background-color: rgba(63, 63, 63, 0.407);
+  padding-bottom: 20px;
+}
