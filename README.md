@@ -1,5 +1,5 @@
 # Movies
-Personal project(warning! :pyramid of doom )
+Personal project (warning! : pyramid of doom ahead)
 
 I used two movie API's one from rapid API and the other one from Omdb website to understand how API's actually work 
 
