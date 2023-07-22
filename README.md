@@ -4,7 +4,7 @@ Personal project (warning! : pyramid of doom ahead)
 I used two movie API's here one from rapid API and the other one from Omdb website to understand how API's actually work 
 ## Topics covered
 - eventloop
-- API use
+- API 
 - promise 
 
 ### note:

@@ -8,24 +8,25 @@ let topRated = document.querySelector('.top_rated')
 let homeUpcomming = document.querySelector('.home_upcomming')
 let searchContainer = document.querySelector('.search_container')
 let searchText = document.querySelector('.search_text')
-
-const body = document.body
 let serarchbtn = document.getElementById('searchbtn')
 let selectables = document.querySelector('.selectables')
+const body = document.body
+
 const upcomingUrlHome = 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming';
 const topUrlHome = 'https://moviesdatabase.p.rapidapi.com/titles?startYear=2013&titleType=movie&list=top_rated_250';
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': '84e6135305mshf6dba2310292fb6p1b9b3ajsn3aa29744acc4',
+    'X-RapidAPI-Key': '84e6135305mshf6dba2310292fb6p1b9b3ajsn3aa29744acc4', //The key is free!
     'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
   }
 };
 
+//immediate call onload 
 homePageCards(topUrlHome)
-setTimeout(()=>{
+setTimeout(() => {
   homePageCards(upcomingUrlHome)
-},3000)
+}, 3000)
 
 //top rated and upcomming movies 
 async function homePageCards(url) {
@@ -52,8 +53,8 @@ async function homePageCards(url) {
 // trims the search txt and fetches the result directtly from the search txt
 serarchbtn.addEventListener('click', () => {
   clearAllcards()
-  topRated.style.display="none"
-  homeUpcomming.style.display="none"
+  topRated.style.display = "none"
+  homeUpcomming.style.display = "none"
   let searchtxt = serarchResult.value.trim()
   let searchUrl = `http://www.omdbapi.com/?apikey=caf49d7e&s=${searchtxt}&plot=Short`;
   fetch(searchUrl)
@@ -64,9 +65,9 @@ serarchbtn.addEventListener('click', () => {
         fetch(url2)
           .then((result) => result.json())
           .then((thedata) => {
-            searchContainer.style.display="block"
-            searchText.innerText=`Search results for ${searchtxt}`
-            creatCard(value.Poster, value.Title, value.Year, thedata.Ratings[0].Value,cardContainerSearch)
+            searchContainer.style.display = "block"
+            searchText.innerText = `Search results for ${searchtxt}`
+            creatCard(value.Poster, value.Title, value.Year, thedata.Ratings[0].Value, cardContainerSearch)
             console.log(thedata)
           })
           .catch(error => console.console.log(error))
