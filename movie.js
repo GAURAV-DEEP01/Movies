@@ -1,3 +1,4 @@
+//get element section
 let serarchResult = document.getElementById('searchresult')
 let allCards = document.querySelector('.allcards')
 let cardContainer = document.querySelector('.card_container')
@@ -25,6 +26,8 @@ homePageCards(topUrlHome)
 setTimeout(()=>{
   homePageCards(upcomingUrlHome)
 },3000)
+
+//top rated and upcomming movies 
 async function homePageCards(url) {
   try {
     const response = await fetch(url, options);
@@ -45,6 +48,8 @@ async function homePageCards(url) {
     console.error(error);
   }
 }
+
+// trims the search txt and fetches the result directtly from the search txt
 serarchbtn.addEventListener('click', () => {
   clearAllcards()
   topRated.style.display="none"
@@ -69,6 +74,7 @@ serarchbtn.addEventListener('click', () => {
     })
     .catch((error) => console.log("error", error))
 })
+//creates a card for every movie element in the json
 const creatCard = (img, title, year, rate, container) => {
   let theCard = document.createElement('div')
   theCard.setAttribute('class', 'selectables deletable')
@@ -83,20 +89,13 @@ const creatCard = (img, title, year, rate, container) => {
           </div>
         </div>
       </div>`
-  theCard.addEventListener('click', e => {
+  theCard.addEventListener('click', () => {
     console.log(title)
   }, { capture: true })
   container.append(theCard)
 }
-// setInterval(() => {
-//    let selectables= document.querySelectorAll('.selectables')
-//    selectables.forEach(value=>{
-//      value.addEventListener('click',()=>{
-//       console.log('click')
-//      })
-//   })
-// }, 1000);
 
+//clears all cards when called 
 const clearAllcards = () => {
   const deletableCard = document.querySelectorAll('.deletable')
   deletableCard.forEach(value => {
