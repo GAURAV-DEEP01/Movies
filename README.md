@@ -1,14 +1,15 @@
 # Movies
-Personal project (warning! : pyramid of doom ahead)
+Personal project (pyramid of doom ahead)
 
-I used two movie API's here one from rapid API and the other one from Omdb website to understand how API's actually work 
+I used 2 movie API's here one from rapid API and the other from [Omdb](https://www.omdbapi.com/) to understand how API's actually work 
 ## Topics covered
 - eventloop
 - API 
-- promise 
+- promise
+- asyncronous programming 
 
-### note:
-The search feature on github pages kinda dosent work because its http not https github allows https
+### Note:
+The search feature on github pages kinda dosent work ,github allows <strong>https</strong> omdb is <strong>http</strong>
 
 It works on a diffrent domain though!
-[searchmovies](http://searchmovies.great-site.net/?i=1)
+[Searchmovies](http://searchmovies.great-site.net/?i=1)
