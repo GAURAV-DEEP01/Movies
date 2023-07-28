@@ -5,8 +5,9 @@ I used 2 movie API's here one from rapid API and the other from [Omdb](https://w
 ## Topics covered
 - eventloop
 - API 
-- promise
 - asyncronous programming 
+- promise
+
 
 ### Note:
 The search feature on github pages kinda dosent work ,github allows <strong>https</strong> omdb is <strong>http</strong>
