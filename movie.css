@@ -63,8 +63,12 @@ display: none;
 .more_info_img{
 width: 50%;  
 }
-@media (min-width:700px) {
-.more_info_img{
-  width: 20%;  
+.add_border{
+  padding-bottom:10px;
+  border-bottom: solid #4c4c4c
 }
+@media (min-width:700px) {
+  .more_info_img{
+    width: 20%;  
+  }
 }

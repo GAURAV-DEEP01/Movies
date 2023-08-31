@@ -145,17 +145,17 @@ const movieMoreInfo = imdbID => {
           let moreInfoDiv = document.createElement('div')
           moreInfoDiv.setAttribute('class', 'deletable px-lg-40')
           moreInfoDiv.innerHTML = `<img src="${data.results.primaryImage.url}" class="more_info_img img-fluid rounded mx-auto d-block mt-3" onerror="this.onerror=null;this.src='images/imageError.jpg';" alt="${data.results.originalTitleText.text}">
-        <h4 class="text-center add_font text-light mt-4">${data.results.originalTitleText.text}</h4>
-        <p class=" add_font d-flex text-light px-2 mt-3 lh-lg"><span class="badge p-2 me-2  text-bg-info">${thePlot.Type}</span>${thePlot.Runtime}</p>
-        <p class="add_font d-flex text-light px-2 mt-3 lh-lg"><span class="badge p-2 me-2  text-bg-info">Ratings</span> ${thePlot.imdbRating}<span class="badge p-2 ms-5 me-2  text-bg-info">Rated </span>${thePlot.Rated}</p>
-        <p class="add_font d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Release date</span>${data.results.releaseDate.day}/${data.results.releaseDate.month}/${data.results.releaseDate.year}</p>
-        <p class="plot add_font text-light px-2 mt-2"> <span class=" p-2 me-2 badge text-bg-info">Plot</span>${thePlot.Plot}</p>
-        <p class="add_font d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Genre</span>${thePlot.Genre}</p>
-        <p class="add_font d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Actors</span> ${thePlot.Actors}</p>
-        <p class="add_font d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Director</span> ${thePlot.Director}</p>
-        <p class="add_font d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Writer</span>${thePlot.Writer}</p>
-        <p class="add_font d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Awards</span>${thePlot.Awards}</p>
-        <p class="add_font d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Box Office</span>${thePlot.BoxOffice}</p>`
+        <h4 class="text-center add_font text-light mt-4"><strong>${data.results.originalTitleText.text}</strong></h4>
+        <p class="add_font add_border d-flex text-light px-2 mt-3 lh-lg"><span class="badge p-2 me-2  text-bg-info">${thePlot.Type}</span>${thePlot.Runtime}</p>
+        <p class="add_font add_border d-flex text-light px-2 mt-3 lh-lg"><span class="badge p-2 me-2  text-bg-info">Ratings</span> ${thePlot.imdbRating}<span class="badge p-2 ms-5 me-2  text-bg-info">Rated </span>${thePlot.Rated}</p>
+        <p class="add_font add_border d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Release date</span>${data.results.releaseDate.day}/${data.results.releaseDate.month}/${data.results.releaseDate.year}</p>
+        <p class="plot add_border add_font text-light px-2 mt-2"> <span class=" p-2 me-2 badge text-bg-info">Plot</span>${thePlot.Plot}</p>
+        <p class="add_font add_border d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Genre</span>${thePlot.Genre}</p>
+        <p class="add_font add_border d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Actors</span> ${thePlot.Actors}</p>
+        <p class="add_font add_border d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Director</span> ${thePlot.Director}</p>
+        <p class="add_font add_border d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Writer</span>${thePlot.Writer}</p>
+        <p class="add_font add_border d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Awards</span>${thePlot.Awards}</p>
+        <p class="add_font add_border d-flex text-light px-2 mt-2 lh-lg"><span class="badge p-2 me-2  text-bg-info">Box Office</span>${thePlot.BoxOffice}</p>`
           moreInfoContainer.append(moreInfoDiv)
         })
         .catch(e => console.log(error))
