@@ -13,8 +13,8 @@ let searchText = document.querySelector('.search_text')
 const body = document.body
 let serarchbtn = document.getElementById('searchbtn')
 let selectables = document.querySelector('.selectables')
-const upcomingUrlHome = 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming';
-const topUrlHome = 'https://moviesdatabase.p.rapidapi.com/titles?startYear=2013&titleType=movie&list=top_rated_250';
+const upcomingUrlHome = 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming?genre=Action';
+const topUrlHome = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2013&endYear=2023&list=top_rated_english_250'
 const options = {
   method: 'GET',
   headers: {
@@ -53,18 +53,24 @@ async function homePageCards(url) {
     const allresult = await response.json();
     console.log(allresult.results);
     allresult.results.forEach(value => {
-      let cardImg = value.primaryImage.url
-      let cardTitle = value.originalTitleText.text
-      let cardYear = value.releaseYear.year
-      if (url == topUrlHome) {
-        fetch(`https://moviesdatabase.p.rapidapi.com/titles/${value.id}/ratings`, options)
-          .then((ratingresponse) => ratingresponse.json())
-          .then((ratingdata) => {
-            let cardRating = ratingdata.results.averageRating
-            creatCard(cardImg, cardTitle, cardYear, cardRating, cardContainer, value.id)
-          })
-      } else {
-        creatCard(cardImg, cardTitle, cardYear, "not rated", cardContainerTwo, value.id)
+      try{
+        if(value.primaryImage==null)  throw new Error("Null Image")
+        let cardImg = value.primaryImage.url
+        let cardTitle = value.originalTitleText.text
+        let cardYear = value.releaseYear.year
+        if (url == topUrlHome) {
+          fetch(`https://moviesdatabase.p.rapidapi.com/titles/${value.id}/ratings`, options)
+            .then((ratingresponse) => ratingresponse.json())
+            .then((ratingdata) => {
+              let cardRating = ratingdata.results.averageRating
+              creatCard(cardImg, cardTitle, cardYear, cardRating, cardContainer, value.id)
+            })
+        } else {
+          creatCard(cardImg, cardTitle, cardYear, "not rated", cardContainerTwo, value.id)
+        }
+      }
+      catch(img_error){
+        console.log(img_error)
       }
     })
   } catch (error) {
@@ -120,7 +126,7 @@ const creatCard = (img, title, year, rate, container, imdbID) => {
 }
 const movieMoreInfo = imdbID => {
   clearAllcards();
-  topRated.style.display = "none"
+  topRated.style.display = "none"  
   searchContainer.style.display = "none"
   homeUpcomming.style.display = "none"
   let moreInfoUrl = `https://moviesdatabase.p.rapidapi.com/titles/episode/${imdbID}`

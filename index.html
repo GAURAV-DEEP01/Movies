@@ -13,29 +13,31 @@
 <body class="bg-dark">
   <header>
     <nav class="navbar bg-secondary-subtle">
-      <div class="container-fluid">
-        <a class="navbar-brand movie_web d-flex p-1"><img class="header_icon" src="images/movieIcon.png" alt="movieIcon">Movies</a>
-        <div class="d-flex">
+      <div class="container-fluid d-flex align-items-end">
+        <a class="navbar-brand movie_web d-flex p-1" onclick="homeLoad()"><img class="header_icon" src="images/movieIcon.png" alt="movieIcon">Search Movies</a>
+        <div class="d-flex align-items-end">
           <input id="searchresult" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button id="searchbtn" class="btn btn-outline-success px-4" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button id="searchbtn" class="btn bg-info px-4" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </div>
     </nav>
   </header>
-  <div class="container pt-2">
+  <div class="container main_wrapper pt-2">
     <div class="top_rated container_bg">
       <div class="badge text-bg-info p-2 p-sm-3 mb-2">Top rated</div>
       <div class="card_container row row-cols-2 row-cols-md-3 row-cols-lg-5 g-1"></div>
     </div>
-    <div class="home_upcomming container_bg mt-3">
-      <div class="badge text-bg-info p-2 p-sm-3 mt-3 my-2">Upcomming</div>
+    <div class="home_upcomming container_bg mt-2">
+      <div class="badge text-bg-info p-2 p-sm-3 mb-2">Upcomming</div>
       <div class="card_container_two row row-cols-2 row-cols-md-3 row-cols-lg-5 g-1"></div>
     </div>
     <div class="search_container container_bg">
       <div class="search_text badge text-bg-info p-2 p-sm-3 mb-2">search result</div>
       <div class="card_container_search row row-cols-2 row-cols-md-3 row-cols-lg-5 g-1"></div>
     </div>
+    <div class="more_info_container container_bg"></div>
   </div>
+  
   <script src="movie.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
