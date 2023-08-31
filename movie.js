@@ -37,7 +37,9 @@ function homeLoad() {
   if (isLoaded) {
     isLoaded = false
     homePageCards(topUrlHome)
-    homePageCards(upcomingUrlHome)
+    setTimeout(() => {
+      homePageCards(upcomingUrlHome)
+    }, 1000)
   }
   setTimeout(() => {
     isLoaded = true;
@@ -51,7 +53,7 @@ async function homePageCards(url) {
   try {
     const response = await fetch(url, options);
     const allresult = await response.json();
-    console.log(allresult.results);
+    // For debuging console.log(allresult.results);
     allresult.results.forEach(value => {
       try{
         if(value.primaryImage==null)  throw new Error("Null Image")
@@ -97,7 +99,7 @@ serarchbtn.addEventListener('click', () => {
               searchText.innerText = `Search results for ${searchtxt}`
               let cardRating = thedata.Ratings[0].Value
               creatCard(value.Poster, value.Title, value.Year, cardRating, cardContainerSearch, value.imdbID)
-              console.log(thedata)
+              // For Debugging console.log(thedata)
             })
             .catch(error => console.console.log(error))
         });
@@ -160,14 +162,5 @@ const movieMoreInfo = imdbID => {
     })
     .catch((e) => console.log(e))
 }
-
-// setInterval(() => {
-//    let selectables= document.querySelectorAll('.selectables')
-//    selectables.forEach(value=>{
-//      value.addEventListener('click',()=>{
-//       console.log('click')
-//      })
-//   })
-// }, 1000);
 
 
